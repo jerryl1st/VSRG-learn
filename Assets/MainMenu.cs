@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour {
 	}
 	 void OnMouseUp() {
      if(ButtonName=="StartBtn")
-		 SceneManager.LoadScene("game", LoadSceneMode.Single);
+		 SceneManager.LoadScene("suzuya", LoadSceneMode.Single);
 	
 	  }
 }

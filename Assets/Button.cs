@@ -18,15 +18,14 @@ public class Button : MonoBehaviour {
 
 	//Use this for awake	
 	void Awake() {
-		sr =  GetComponent<SpriteRenderer>();
-		PlayerPrefs.SetInt("Score",0000000);
-		TotalNotes = GameObject.FindGameObjectsWithTag ("Note").Length;
-		BaseScore = Mathf.Ceil(MaxScore / TotalNotes);
+		 sr =  GetComponent<SpriteRenderer>();
+		 TotalNotes = GameObject.FindGameObjectsWithTag("Note").Length;
+		 BaseScore = Mathf.Ceil(MaxScore / TotalNotes);
+		 PlayerPrefs.SetFloat("Score",0000000);
 	}
 	// Use this for initialization
 	void Start () {
 		old = sr.color;
-
 	}
 	
 	// Update is called once per frame
@@ -44,9 +43,8 @@ public class Button : MonoBehaviour {
 				AddScore();
 		}
 		}
-		if(PlayerPrefs.GetFloat("Score") > MaxScore)
-		 PlayerPrefs.SetFloat("Score", MaxScore);
-		
+		if (PlayerPrefs.GetFloat("Score") > MaxScore)
+			PlayerPrefs.SetFloat("Score", MaxScore);
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
