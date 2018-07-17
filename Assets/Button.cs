@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Button : MonoBehaviour {
 		public KeyCode key;
+		int MaxScore = 1000000;
+		int BaseScore;
+		public int TotalNotes;
+
 		bool active = false;
 		GameObject note;
 		SpriteRenderer sr;
@@ -12,6 +16,9 @@ public class Button : MonoBehaviour {
 	//Use this for awake	
 	void Awake() {
 		 sr =  GetComponent<SpriteRenderer>();
+		 TotalNotes = GameObject.FindGameObjectsWithTag("Note").Length;
+		 BaseScore = MaxScore / TotalNotes;
+		 PlayerPrefs.SetInt("Score",0000000);
 	}
 	// Use this for initialization
 	void Start () {
@@ -25,6 +32,7 @@ public class Button : MonoBehaviour {
 		}
 		if(Input.GetKeyDown(key)&&active){
 			Destroy(note);
+			AddScore();
 		}
 	}
 
@@ -32,6 +40,10 @@ public class Button : MonoBehaviour {
 		active = true;
 		if(col.gameObject.tag=="Note")
 			note = col.gameObject;
+	}
+
+	void AddScore() {
+		PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+ BaseScore);
 	}
 
 	void OnTriggerExit2D(Collider2D col) {
