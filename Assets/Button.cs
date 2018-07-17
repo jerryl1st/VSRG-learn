@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Button : MonoBehaviour {
 		public KeyCode key;
-		int MaxScore = 1000000;
-		int BaseScore;
-		public int TotalNotes;
-
+		 int MaxScore = 1000000;
+		 int BaseScore;
+		 int TotalNotes;
 		bool active = false;
 		GameObject note;
 		SpriteRenderer sr;
