@@ -171,7 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 107
-  TotalNotes: 0
 --- !u!212 &169875071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -609,7 +608,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 102
-  TotalNotes: 0
 --- !u!212 &1170410874
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1070,7 +1068,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 106
-  TotalNotes: 0
 --- !u!212 &1642534688
 SpriteRenderer:
   m_ObjectHideFlags: 0
