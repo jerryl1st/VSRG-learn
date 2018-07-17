@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Button : MonoBehaviour {
 		public KeyCode key;
+
+		public bool MappingMode;
+		public GameObject n;
+
 		 int MaxScore = 1000000;
 		 int BaseScore;
 		 int TotalNotes;
@@ -26,13 +30,20 @@ public class Button : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(key)){
-			StartCoroutine(Pressed());
+		if(MappingMode){
+			if(Input.GetKeyDown(key))
+				Instantiate(n,transform.position,Quaternion.identity);
 		}
-		if(Input.GetKeyDown(key)&&active){
-			Destroy(note);
-			AddScore();
+		else {
+			if(Input.GetKeyDown(key)){
+				StartCoroutine(Pressed());
 		}
+			if(Input.GetKeyDown(key)&&active){
+				Destroy(note);
+				AddScore();
+		}
+		}
+		
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
