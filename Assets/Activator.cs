@@ -19,7 +19,7 @@ public class Activator : MonoBehaviour {
 		}
 	}
 
-	void onTriggerEnter2D(Collider2D col) {
+	void OnTriggerEnter2D(Collider2D col) {
 		active = true;
 		if(col.gameObject.tag=="Note")
 			note = col.gameObject;
