@@ -2,18 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Activator : MonoBehaviour {
+public class Button : MonoBehaviour {
 		public KeyCode key;
 		bool active = false;
 		GameObject note;
+		SpriteRenderer sr;
+		Color old;
 
+	//Use this for awake	
+	void Awake() {
+		 sr =  GetComponent<SpriteRenderer>();
+	}
 	// Use this for initialization
 	void Start () {
-		
+		old = sr.color;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown(key)){
+			StartCoroutine(Pressed());
+		}
 		if(Input.GetKeyDown(key)&&active){
 			Destroy(note);
 		}
@@ -27,5 +36,11 @@ public class Activator : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D col) {
 		active = false;
+	}
+
+	IEnumerator Pressed(){
+		sr.color= new Color(0,0,0);
+		yield return new WaitForSeconds(0.06f);
+		sr.color = old;
 	}
 }
