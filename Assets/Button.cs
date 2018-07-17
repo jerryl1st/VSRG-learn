@@ -8,9 +8,9 @@ public class Button : MonoBehaviour {
 		public bool MappingMode;
 		public GameObject n;
 
-		 int MaxScore = 1000000;
-		 int BaseScore;
-		 int TotalNotes;
+		 float MaxScore = 1000000;
+		 float BaseScore;
+		 float TotalNotes;
 		bool active = false;
 		GameObject note;
 		SpriteRenderer sr;
@@ -18,15 +18,15 @@ public class Button : MonoBehaviour {
 
 	//Use this for awake	
 	void Awake() {
-		 sr =  GetComponent<SpriteRenderer>();
-		 
+		sr =  GetComponent<SpriteRenderer>();
+		PlayerPrefs.SetInt("Score",0000000);
+		TotalNotes = GameObject.FindGameObjectsWithTag ("Note").Length;
+		BaseScore = Mathf.Ceil(MaxScore / TotalNotes);
 	}
 	// Use this for initialization
 	void Start () {
 		old = sr.color;
-		TotalNotes = GameObject.FindGameObjectsWithTag("Note").Length;
-		BaseScore = MaxScore / TotalNotes;
-		PlayerPrefs.SetInt("Score",0000000);
+
 	}
 	
 	// Update is called once per frame
@@ -44,6 +44,8 @@ public class Button : MonoBehaviour {
 				AddScore();
 		}
 		}
+		if(PlayerPrefs.GetFloat("Score") > MaxScore)
+		 PlayerPrefs.SetFloat("Score", MaxScore);
 		
 	}
 
@@ -54,7 +56,7 @@ public class Button : MonoBehaviour {
 	}
 
 	void AddScore() {
-		PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+ BaseScore);
+		PlayerPrefs.SetFloat("Score",PlayerPrefs.GetFloat("Score")+ BaseScore);
 	}
 
 	void OnTriggerExit2D(Collider2D col) {
