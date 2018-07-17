@@ -171,6 +171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 107
+  MappingMode: 0
+  n: {fileID: 0}
 --- !u!212 &169875071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -286,6 +288,16 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114638351914553650, guid: 091f043a9ee9bdf48ad7f2cc05a518d9,
+        type: 2}
+      propertyPath: MappingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114638351914553650, guid: 091f043a9ee9bdf48ad7f2cc05a518d9,
+        type: 2}
+      propertyPath: n
+      value: 
+      objectReference: {fileID: 338025583}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 091f043a9ee9bdf48ad7f2cc05a518d9, type: 2}
   m_IsPrefabParent: 0
@@ -393,6 +405,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d34e86451cf92c34398a82068b2ab3a1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &338025583 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1309230046443116, guid: d34e86451cf92c34398a82068b2ab3a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 338025582}
 --- !u!4 &347473617 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4915830311291908, guid: 2d7f7298d38338e4fa28cccf08832dd4,
@@ -608,6 +625,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 102
+  MappingMode: 0
+  n: {fileID: 0}
 --- !u!212 &1170410874
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1068,6 +1087,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 106
+  MappingMode: 1
+  n: {fileID: 338025583}
 --- !u!212 &1642534688
 SpriteRenderer:
   m_ObjectHideFlags: 0

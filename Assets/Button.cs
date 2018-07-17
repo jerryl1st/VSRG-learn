@@ -19,13 +19,14 @@ public class Button : MonoBehaviour {
 	//Use this for awake	
 	void Awake() {
 		 sr =  GetComponent<SpriteRenderer>();
-		 TotalNotes = GameObject.FindGameObjectsWithTag("Note").Length;
-		 BaseScore = MaxScore / TotalNotes;
-		 PlayerPrefs.SetInt("Score",0000000);
+		 
 	}
 	// Use this for initialization
 	void Start () {
 		old = sr.color;
+		TotalNotes = GameObject.FindGameObjectsWithTag("Note").Length;
+		BaseScore = MaxScore / TotalNotes;
+		PlayerPrefs.SetInt("Score",0000000);
 	}
 	
 	// Update is called once per frame
